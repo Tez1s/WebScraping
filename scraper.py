@@ -30,4 +30,4 @@ def set():
         img_url = "https://scrapingclub.com" + data.find("img").get("src")
         price = data.find("h4", class_="my-4 card-price").text
         description = data.find("p", class_="card-description").text
-        print(name + "\n", img_url + "\n", price + "\n", description + "\n")
+        print(name, img_url, price, description)
