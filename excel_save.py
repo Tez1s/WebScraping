@@ -3,7 +3,7 @@ from scraper import set
 
 
 def writer(parametr):
-    book = xlsxwriter.Workbook(r"C:\Users\38066\Desktop\sp_save_e.xlsx")
+    book = xlsxwriter.Workbook(r"your\path\to\the\.xlsx file")
     page = book.add_worksheet("product")
 
     row = 0
