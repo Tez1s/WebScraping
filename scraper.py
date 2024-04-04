@@ -20,14 +20,14 @@ def get_url():
             yield obj_url
 
 
-# inside of those pages
-for obj_url in get_url():
-    sleep(3)
-    response = requests.get(obj_url, headers=headers)
-    soup = BeautifulSoup(response.text, "lxml")
-    data = soup.find("div", class_="my-8 w-full rounded border")
-    name = data.find("h3", class_="card-title").text
-    img_url = "https://scrapingclub.com" + data.find("img").get("src")
-    price = data.find("h4", class_="my-4 card-price").text
-    description = data.find("p", class_="card-description").text
-    print(name + "\n", img_url + "\n", price + "\n", description + "\n")
+def set():
+    for obj_url in get_url():
+        sleep(3)
+        response = requests.get(obj_url, headers=headers)
+        soup = BeautifulSoup(response.text, "lxml")
+        data = soup.find("div", class_="my-8 w-full rounded border")
+        name = data.find("h3", class_="card-title").text
+        img_url = "https://scrapingclub.com" + data.find("img").get("src")
+        price = data.find("h4", class_="my-4 card-price").text
+        description = data.find("p", class_="card-description").text
+        print(name + "\n", img_url + "\n", price + "\n", description + "\n")
